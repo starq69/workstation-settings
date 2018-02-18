@@ -1,0 +1,42 @@
+# https://www.cyberciti.biz/tips/bash-aliases-mac-centos-linux-unix.html
+
+alias ..='cd ..'
+
+#alias nocomment='grep -Ev '\''^(#|$)'\'''
+#alias nocomment='grep -v '\''^ *#\'''' 
+
+alias hg='history|grep '
+
+# directory-size-date (remove the echo/blank line if you desire)
+alias dsd="echo;ls -Fla"
+alias   dsdm="ls -FlAh | more"
+
+# show directories only
+alias   dsdd="ls -FlA | grep :*/"
+
+# show executables only
+alias   dsdx="ls -FlA | grep \*"
+
+# show non-executables
+alias   dsdnx="ls -FlA | grep -v \*"
+
+# order by date
+alias   dsdt="ls -FlAtr "
+
+# dsd plus sum of file sizes
+alias   dsdz="ls -Fla $1 $2 $3 $4 $5  | awk '{ print; x=x+\$5 } END { print \"total bytes = \",x }'"
+
+# only file without an extension
+alias noext='dsd | egrep -v "\.|/"'
+
+#Grabs the disk usage in the current directory
+#
+alias usage='du -ch 2> /dev/null |tail -1'
+
+#Shows the individual partition usages without the temporary memory values
+#
+alias partusage='df -hlT --exclude-type=tmpfs --exclude-type=devtmpfs'
+
+#Gives you what is using the most space. Both directories and files. Varies on current directory
+#
+alias most='du -hsx * | sort -rh | head -10'

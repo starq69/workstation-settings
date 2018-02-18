@@ -1,0 +1,8 @@
+# duls 
+#-------
+# from : 
+# http://stackoverflow.com/questions/1019116/using-ls-to-list-directories-and-their-total-sizes
+function duls {
+    paste <( du -hs -- "$@" | cut -f1 ) <( ls -ld -- "$@" )
+}
+

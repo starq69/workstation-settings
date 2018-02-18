@@ -1,0 +1,30 @@
+Nel file TAGS sono specificati i tag utilizzabili dal comando <asset> per autogenerare il progetto
+n.b.
+<asset> è un progetto scaturito dalla necessità di standardizzare la gestione degli 'assets digitali' (i progetti)
+
+per definire una root per es. WSPACE (workspace al posto di REP...) :
+[/home/user/repository] $asset WSPACE
+  genera la directory base degli assets taggata come root ciò significa che nel file TAGS avremo per es. 'ROOT'
+  
+
+$ asset 
+  se esiste la root elenca i progetti contenuti in ordine di ultimo accesso (per es accessi tramite il comando 'cd <asset-path>'
+  il che implica ridefinire anche il comando 'cd' in modo che 'produca una traccia di accesso' scrivendo un file univoco in una
+  cartella di lavoro di <asset> prima di essere eseguito
+
+  il comando senza opzioni permette di accedere rapidamente alle cartelle di progetto elencandole
+
+
+opera come segue:
+
+in presenza di un file TAGS il comado invoca la relativa funzione di trattamento del tag :
+
+es 1 (un solo tag per la tipologia di progetto):
+PYTHON
+
+crea un progetto python da un template base cookiecutter
+
+es 2 (più tag, quello per la tipologia di progetto è PRJ=<tag>:
+PRJ=PYTHON
+
+come sopra
